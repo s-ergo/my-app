@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Container from "@mui/material/Container";
+import CssBaseline from "@mui/material/CssBaseline";
+import React, { memo } from "react";
+import { Route, Routes } from "react-router-dom";
+import { FrontendRoutes } from "./data/constants/FrontendRoutes";
+import HomePage from "./pages/homePage/HomePage";
+import PostPage from "./pages/postPage/PostPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <>
+            <CssBaseline />
+            <Container sx={{ p: 3 }} maxWidth={false}>
+                <Routes>
+                    <Route index element={<HomePage />} />
+                    <Route path={FrontendRoutes.POST_PAGE()} element={<PostPage />} />
+                </Routes>
+            </Container>
+        </>
+    );
+};
 
-export default App;
+export default memo(App);
