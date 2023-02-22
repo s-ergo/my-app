@@ -2,10 +2,9 @@
 
 API: https://jsonplaceholder.typicode.com
 
-Using the /users query, display a list of users
+Fetch a list of users using the /users endpoint.
 
-Actions on the user element:
+For each user, provide the following actions:
 
-When you click on the "posts" button, display his posts (/posts) on a separate page
-
-When you click on the "albums" button, display his albums (/albums) in a modal window
+Clicking on the "posts" button should display their posts (/posts) on a separate page.
+Clicking on the "albums" button should display their albums (/albums) in a modal window.
