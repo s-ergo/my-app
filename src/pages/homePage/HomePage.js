@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 import ItemsList from "../../components/ItemsList";
 import { FrontendRoutes } from "../../data/constants/FrontendRoutes";
 import { fetchAlbums, fetchUsers } from "../../data/redux/actions";
-import ModalDialog from "./ModalDialog";
+import ModalList from "./ModalList";
 
 const HomePage = () => {
     const dispatch = useDispatch();
@@ -29,7 +29,7 @@ const HomePage = () => {
         <>
             <Button variant="contained" onClick={() => dispatch(fetchUsers())}>Fetch users</Button>
             <ItemsList items={users} action="users" handlePosts={handlePosts} handleAlbums={handleAlbums} />
-            <ModalDialog open={open} setOpen={setOpen} albums={albums} />
+            <ModalList open={open} setOpen={setOpen} albums={albums} />
         </>
     );
 };

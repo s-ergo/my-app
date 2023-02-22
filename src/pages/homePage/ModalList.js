@@ -3,7 +3,7 @@ import DialogContent from "@mui/material/DialogContent";
 import React, { memo } from "react";
 import ItemsList from "../../components/ItemsList";
 
-const ModalDialog = ({ open, setOpen, albums }) => {
+const ModalList = ({ open, setOpen, albums }) => {
     const handleClose = () => {
         setOpen(false);
     };
@@ -19,4 +19,4 @@ const ModalDialog = ({ open, setOpen, albums }) => {
     );
 };
 
-export default memo(ModalDialog);
+export default memo(ModalList);
