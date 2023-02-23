@@ -1,7 +1,7 @@
 import { List, ListItem, ListItemText } from "@mui/material";
-import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
+import PropTypes from "prop-types";
 import React, { memo } from "react";
+import Controls from "./Controls";
 
 const ItemsList = ({ items, action, handlePosts, handleAlbums }) => {
     const actionObj = {
@@ -20,15 +20,7 @@ const ItemsList = ({ items, action, handlePosts, handleAlbums }) => {
                     <ListItemText primary={item[actionObj[action][0]]} secondary={item[actionObj[action][1]]} />
 
                     {action === "users" && (
-                        <Stack direction="row" spacing={1}>
-                            <Button variant="contained" size="small" onClick={() => handlePosts(item.id)}>
-                                Posts
-                            </Button>
-
-                            <Button variant="contained" size="small" onClick={() => handleAlbums(item.id)}>
-                                Albums
-                            </Button>
-                        </Stack>
+                        <Controls handlePosts={handlePosts} handleAlbums={handleAlbums} userId={item.id} />
                     )}
                 </ListItem>
             ))}
@@ -37,3 +29,10 @@ const ItemsList = ({ items, action, handlePosts, handleAlbums }) => {
 };
 
 export default memo(ItemsList);
+
+ItemsList.propTypes = {
+    action: PropTypes.string.isRequired,
+    items: PropTypes.array.isRequired,
+    handlePosts: PropTypes.func,
+    handleAlbums: PropTypes.func,
+};
