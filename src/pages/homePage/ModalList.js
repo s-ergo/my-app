@@ -10,13 +10,11 @@ const ModalList = ({ open, setOpen, albums }) => {
     };
 
     return (
-        <div>
-            <Dialog open={open} onClose={handleClose}>
-                <DialogContent>
-                    <ItemsList items={albums} action="albums" />
-                </DialogContent>
-            </Dialog>
-        </div>
+        <Dialog open={open} onClose={handleClose}>
+            <DialogContent>
+                <ItemsList items={albums} action="albums" />
+            </DialogContent>
+        </Dialog>
     );
 };
 
